@@ -60,7 +60,7 @@ router.post("/signup", async (req, res) => {
         // Set the JWT token in a secure, HTTP-only cookie
         res.cookie('jwtToken', token, {
             httpOnly: true, // Ensures the cookie can't be accessed via JavaScript
-            secure: false, // Set to true if your app is served over HTTPS
+            secure: process.env.NODE_ENV === 'production', // Set to true in production, // Set to true if your app is served over HTTPS
         });
 
         res.status(201).json({ message: 'Hotel registered successfully', hotel: result.rows[0] });
@@ -101,7 +101,7 @@ router.post("/login", async (req, res) => {
         // Set the JWT token in a secure, HTTP-only cookie
         res.cookie('jwtToken', token, {
             httpOnly: true, 
-            secure: false,
+            secure: process.env.NODE_ENV === 'production', // Set to true in production,
         });
 
         res.status(200).json({ message: 'Login successful', token });
