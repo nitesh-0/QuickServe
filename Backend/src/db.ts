@@ -75,3 +75,5 @@ const createTables = async () => {
 
 // Call the function to create the tables
 createTables();
+
+export default pool;
