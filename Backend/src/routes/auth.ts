@@ -1,7 +1,7 @@
 import express from "express";
 import pool from '../db';
 import zod from "zod";
-import bcrypt from "bcrypt";
+import bcrypt from 'bcryptjs';
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 
