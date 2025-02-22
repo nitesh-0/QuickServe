@@ -49,7 +49,7 @@ const NavbarComponent = () => {
             <li><Link to="/dashboard" className="nav-link">Dashboard</Link></li>
             <li><Link to="/menu" className="nav-link">Menu Management</Link></li>
             <li><Link to="/tables" className="nav-link">Table Management</Link></li>
-            <li><Link to="/payment" className="nav-link">Payment Detail</Link></li>
+            <li><Link to="/payment" className="nav-link">Payment</Link></li>
           </>
         )}
         <li>
