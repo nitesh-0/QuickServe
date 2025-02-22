@@ -273,7 +273,7 @@ const PlaceOrder: React.FC = () => {
                 className="d-flex flex-column"
               >
                 <strong>Order No: {order.order_id}</strong>
-                <p>Total: ${order.total_price.toFixed(2)}</p>
+                <p>Total: ${Number(order.total_price).toFixed(2)}</p>
                 <p>Placed At: {new Date(order.created_at).toLocaleString()}</p>
                 <p>
                   Status:{" "}
@@ -291,7 +291,7 @@ const PlaceOrder: React.FC = () => {
                   {order.items.map((item, index) => (
                     <li key={index}>
                       {item.menu_item_name} x {item.quantity} - $
-                      {item.subtotal_price.toFixed(2)}
+                      {Number(item.subtotal_price).toFixed(2)}
                     </li>
                   ))}
                 </ul>
