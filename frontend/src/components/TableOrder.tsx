@@ -4,7 +4,7 @@ import axios from "axios";
 import { Table, Container, Button, Badge, Spinner } from "react-bootstrap";
 import "../styles/orders.css"; // Import CSS for styling
 
-const API_BASE = "http://localhost:3000/api/v1/owner";
+const API_BASE = "https://quickserve-7.onrender.com/api/v1/owner";
 
 interface OrderItem {
   menu_item_id: number;

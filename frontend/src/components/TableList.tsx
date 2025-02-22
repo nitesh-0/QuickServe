@@ -5,7 +5,7 @@ import { Container, Button } from "react-bootstrap";
 import { FaTable, FaPlus } from "react-icons/fa"; // Table & Add Icon
 import "../styles/tables.css"; // Ensure you include this CSS file
 
-const API_BASE = "http://localhost:3000/api/v1/owner";
+const API_BASE = "https://quickserve-7.onrender.com/api/v1/owner";
 
 interface TableData {
   table_id: number;

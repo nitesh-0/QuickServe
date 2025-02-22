@@ -4,7 +4,7 @@ import { Button, Table, Form, Alert, Container } from "react-bootstrap";
 import "../styles/navbar.css";
 import { useNavigate } from "react-router-dom";
 
-const API_BASE = "http://localhost:3000/api/v1/tables";
+const API_BASE = "https://quickserve-7.onrender.com/api/v1/tables";
 
 interface TableData {
   table_no: number;

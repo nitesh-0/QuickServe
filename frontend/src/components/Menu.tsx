@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Button, Table, Modal, Form, Alert } from "react-bootstrap";
 
-const API_BASE = "http://localhost:3000/api/v1/menu"; // Adjust based on your backend
+const API_BASE = "https://quickserve-7.onrender.com/api/v1/menu"; // Adjust based on your backend
 
 interface MenuItem {
   id: number;

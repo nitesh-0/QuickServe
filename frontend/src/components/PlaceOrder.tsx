@@ -14,7 +14,7 @@ import {
 import "../styles/navbar.css";
 import "../styles/placeorder.css";
 
-const API_BASE = "http://localhost:3000/api/v1/orders";
+const API_BASE = "https://quickserve-7.onrender.com/api/v1/orders";
 
 interface MenuItem {
   id: number;

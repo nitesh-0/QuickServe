@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Button, Table } from "react-bootstrap";
 
-const API_BASE = "http://localhost:3000/api/v1/owner/orders";
+const API_BASE = "https://quickserve-7.onrender.com/api/v1/owner/orders";
 
 interface OrderItem {
   menu_item_id: number;
