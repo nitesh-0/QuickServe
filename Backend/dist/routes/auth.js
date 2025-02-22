@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const db_1 = __importDefault(require("../db"));
 const zod_1 = __importDefault(require("zod"));
-const bcrypt_1 = __importDefault(require("bcrypt"));
+const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const router = express_1.default.Router();
@@ -46,7 +46,7 @@ router.post("/signup", (req, res) => __awaiter(void 0, void 0, void 0, function*
             return;
         }
         // Hash the password
-        const hashedPassword = yield bcrypt_1.default.hash(password, 10);
+        const hashedPassword = yield bcryptjs_1.default.hash(password, 10);
         // Insert the new hotel into the database
         const insertQuery = `
             INSERT INTO Hotels (name, email, password, address)
@@ -80,7 +80,7 @@ router.post("/login", (req, res) => __awaiter(void 0, void 0, void 0, function* 
         }
         const hotel = result.rows[0];
         // Verify the password
-        const isMatch = yield bcrypt_1.default.compare(password, hotel.password);
+        const isMatch = yield bcryptjs_1.default.compare(password, hotel.password);
         if (!isMatch) {
             res.status(400).json({ message: 'Invalid email or password' });
             return;

@@ -13,11 +13,13 @@
 
 import { Pool } from 'pg';
 
-// Use the DATABASE_URL environment variable if it's set (for production)
 const pool = new Pool({
-    connectionString: "postgresql://qsdb_user:Eiw9JW183GXv5b4xVsdeHPteVknuwneK@dpg-cusqvkjqf0us739npn20-a/qsdb",  // This will be set in Render's environment variables
-    ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false, // Secure connection for production
+    connectionString: 'postgresql://qsdb_user:Eiw9JW183GXv5b4xVsdeHPteVknuwneK@dpg-cusqvkjqf0us739npn20-a/qsdb',
+    ssl: {
+        rejectUnauthorized: false, // This is required for Render's database
+    },
 });
 
 export default pool;
+
 
