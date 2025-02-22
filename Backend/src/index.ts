@@ -7,7 +7,7 @@ const app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin: "https://quick-serve-weld.vercel.app/", // Frontend URL
+    origin: "https://quick-serve-weld.vercel.app", // Frontend URL
     credentials: true
 }))
 
