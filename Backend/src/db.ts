@@ -1,7 +1,7 @@
 import { Pool } from 'pg';
 
 const pool = new Pool({
-    connectionString: 'postgresql://qsdb_user:Eiw9JW183GXv5b4xVsdeHPteVknuwneK@dpg-cusqvkjqf0us739npn20-a/qsdb',
+    connectionString: 'postgresql://neondb_owner:x2wotRkhvS6u@ep-late-mouse-a5hr825k-pooler.us-east-2.aws.neon.tech/quickserve?sslmode=require',
     ssl: {
         rejectUnauthorized: false, // This is required for Render's database
     },
@@ -10,6 +10,16 @@ const pool = new Pool({
 // Function to create the tables
 const createTables = async () => {
     try {
+        // Creating tables table first
+        await pool.query(`
+            CREATE TABLE IF NOT EXISTS public.tables (
+                table_id SERIAL PRIMARY KEY,
+                table_no INTEGER NOT NULL,
+                qr_code_url TEXT,
+                hotel_id INTEGER REFERENCES public.hotels(hotel_id) ON DELETE CASCADE
+            );
+        `);
+
         // Creating hotels table
         await pool.query(`
             CREATE TABLE IF NOT EXISTS public.hotels (
@@ -52,16 +62,6 @@ const createTables = async () => {
                 order_id INTEGER REFERENCES public.orders(order_id) ON DELETE CASCADE,
                 quantity INTEGER NOT NULL,
                 subtotal_price NUMERIC(10,2) NOT NULL
-            );
-        `);
-
-        // Creating tables table
-        await pool.query(`
-            CREATE TABLE IF NOT EXISTS public.tables (
-                table_id SERIAL PRIMARY KEY,
-                table_no INTEGER NOT NULL,
-                qr_code_url TEXT,
-                hotel_id INTEGER REFERENCES public.hotels(hotel_id) ON DELETE CASCADE
             );
         `);
 
