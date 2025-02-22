@@ -1,5 +1,4 @@
-# 🍽️ QuickServe - Restaurant Management System  
-**Seamless QR-based ordering for restaurants**  
+# 🍽️ QuickServe - QR-based ordering for restaurants 
 
 ![QuickServe](https://your-image-link.com) _(Add an image of your app here)_
 
