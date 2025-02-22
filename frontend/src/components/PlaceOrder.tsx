@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import {
   Card,
@@ -57,7 +57,6 @@ const PlaceOrder: React.FC = () => {
   const [error, setError] = useState("");
   const [showSuccessModal, setShowSuccessModal] = useState(false);
 
-  const navigate = useNavigate(); // ✅ Hook to navigate programmatically
 
   // ✅ Fetch menu items
   useEffect(() => {
