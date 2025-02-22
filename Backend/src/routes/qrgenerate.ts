@@ -5,7 +5,7 @@ import QRCode from "qrcode";
 
 const router = express.Router();
 
-const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173"; // Ensure correct frontend URL
+const FRONTEND_URL = "https://quick-serve-weld.vercel.app/"; // Ensure correct frontend URL
 
 /**
  * @route POST /api/v1/tables/add
