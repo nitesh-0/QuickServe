@@ -39,7 +39,7 @@ const Signup: React.FC = () => {
     setSuccessMessage(null);
 
     try {
-      const response = await fetch("http://localhost:3000/api/v1/auth/signup", {
+      const response = await fetch("https://quickserve-7.onrender.com/api/v1/auth/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
