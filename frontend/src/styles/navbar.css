@@ -1,0 +1,297 @@
+/* Default Light Mode */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333;
+  --nav-bg: #e0e0e0; /* Light Grey Background */
+  --nav-text: #000;
+  --btn-bg: #d6d6d6;
+  --btn-text: #333;
+  --brand-color: #000;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --bg-color: #111118;
+  --text-color: #ffffff;
+  --nav-bg: #161b22; /* Darker navbar for better visibility */
+  --nav-text: #ffffff;
+  --btn-bg: #444;
+  --btn-text: #ffffff;
+  --brand-color: #fff;
+}
+
+/* Apply Theme */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Ensures vertical centering */
+  padding: 15px 40px; /* Increased padding for more width */
+  height: 70px; /* Adjusted height */
+  width: 100%; /* Slightly increased width */
+  margin: 0 auto; /* Centers navbar */
+ /* border-radius: 10px; Soft rounded edges for a premium feel */
+ position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* Allow content below navbar to scroll */
+.page-content {
+  margin-top: 80px; /* Push content below fixed navbar */
+  height: calc(100vh - 80px); /* Prevent overflow issues */
+  overflow-y: auto; /* Enable scrolling only for content */
+  padding: 20px;
+}
+
+
+/* Brand Logo */
+.navbar-brand {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--brand-color);
+  text-decoration: none;
+}
+
+/* Navigation Links */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  align-items: center; /* Ensures perfect vertical centering */
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links .nav-link {
+  text-decoration: none;
+  color: var(--nav-text);
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-links .nav-link:hover {
+  color: #f39c12; /* Elegant hover effect */
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.3s, color 0.3s;
+}
+
+.theme-toggle:hover {
+  background: var(--btn-text);
+  color: var(--btn-bg);
+}
+
+
+/* Ensure the navbar remains fixed at the top */
+
+
+/* Allow content below navbar to scroll */
+.page-content {
+  margin-top: 80px; /* Push content below fixed navbar */
+  height: calc(100vh - 80px); /* Prevent overflow issues */
+  overflow-y: auto; /* Enable scrolling only for content */
+  padding: 20px;
+}
+
+
+
+
+  
+  /* 📱 MOBILE RESPONSIVENESS */
+  @media screen and (max-width: 768px) {
+    .navbar {
+      padding: 10px 20px;
+    }
+  
+    .navbar-links {
+      gap: 15px;
+    }
+  
+    .nav-link {
+      font-size: 14px;
+      padding: 6px 10px;
+    }
+  }
+  
+
+  .grid-template {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; /* Ensures even spacing */
+    align-items: center;
+    gap: 20px; /* Equal spacing for all */
+  }
+  
+  .menu-name {
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .menu-price, .menu-category {
+    text-align: center;
+    min-width: 100px; /* Ensures same width */
+  }
+  
+  /* Table Management Title */
+.table-management-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Main Container */
+.table-container {
+  padding-bottom: 00px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Form Section */
+.form-container {
+  width: 50%; 
+   margin-top: 50px;
+  margin-bottom: 20px;
+
+}
+
+/* Table Wrapper - Enables Scrolling */
+.table-wrapper {
+  width: 50%;
+  max-height: 400px; /* Restrict height to make it scrollable */
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+
+.menu-management-title { 
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 40px
+}
+
+/* Push the entire menu section lower */
+.menu-container {
+  padding-top: 65px; /* Increased padding to move content further down */
+}
+
+
+/* Ensure Full-Screen Hero Section */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Hero Section */
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 0;
+}
+
+/* Hero Content */
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+}
+
+/* Left Section - Text */
+.text-section {
+  text-align: left;
+  max-width: 550px;
+  margin-left: 112px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  letter-spacing: 1.5px;
+}
+
+.hero-description {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.hero-button {
+  font-size: 1.2rem;
+  padding: 12px 25px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.hero-button:hover {
+  transform: scale(1.05);
+}
+
+/* Right Section - QR Code */
+.qr-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.qr-icon {
+  width: 120px;
+  height: 120px;
+}
+
+.qr-text {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+}
+
+/* Smooth Fade-in Effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

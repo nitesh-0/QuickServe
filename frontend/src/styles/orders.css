@@ -1,0 +1,92 @@
+/* Order Page Container */
+.order-container {
+    max-width: 90%;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  /* Orders Table */
+  .order-table {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Centered Heading */
+  .order-container h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Status and Payment Buttons */
+  .order-table .btn {
+    font-size: 14px;
+    padding: 5px 10px;
+    min-width: 90px;
+  }
+  
+  /* Status Button (Unserved/Served) */
+  .status-unserved {
+    background-color: #ffc107;
+    color: black;
+  }
+  
+  .status-served {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  /* Payment Button (Unpaid/Paid) */
+  .payment-unpaid {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .payment-paid {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  /* Delete Button */
+  .delete-order {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+  }
+  
+  .delete-order:hover {
+    background-color: #d63434;
+  }
+  
+  /* Table Rows & Columns */
+  .order-table th {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+  }
+  
+  .order-table td {
+    padding: 10px;
+    vertical-align: middle;
+  }
+  
+  /* Responsive Table */
+  @media (max-width: 768px) {
+    .order-container {
+      width: 100%;
+      padding: 10px;
+    }
+    
+    .order-table {
+      font-size: 14px;
+    }
+  
+    .order-table .btn {
+      font-size: 12px;
+      padding: 4px 8px;
+      min-width: 80px;
+    }
+  }
+  

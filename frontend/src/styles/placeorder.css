@@ -1,0 +1,19 @@
+/* Ensure full-page scrolling */
+
+  
+  /* Ensure container scrolls when content overflows */
+  .container {
+    min-height: 100vh;
+    overflow-y: auto;
+    padding-bottom: 20px; /* Prevents content from getting cut off */
+  }
+  
+  /* Ensure Selected Items Section is Scrollable */
+  .selected-items-container {
+    max-height: 250px; /* ✅ Limit height */
+    overflow-y: auto; /* ✅ Enable vertical scrolling */
+    padding: 10px;
+    border: 1px solid #ccc; /* Optional: Border to separate section */
+    border-radius: 8px;
+  }
+  
