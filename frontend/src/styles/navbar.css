@@ -309,8 +309,32 @@ html, body {
 }
 
 
+/* General Styling */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Adds space between QR and Hero content */
+}
+
+.hero-content {
+  text-align: center;
+}
+
+.qr-code {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+  .container {
+    gap: 30px; /* Add more gap for better separation */
+  }
+
   .hero-title {
     font-size: 2rem;
   }
@@ -326,6 +350,11 @@ html, body {
 
   .qr-text {
     font-size: 0.9rem;
+  }
+
+  /* Stack QR above and Hero content below on smaller screens */
+  .container {
+    flex-direction: column;
   }
 }
 
