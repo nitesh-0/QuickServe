@@ -6,7 +6,6 @@ const NavbarComponent = () => {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
 
-  // ✅ Check if URL matches /menu/:hotelId/:tableNo
   const isMenuPage = /^\/menu\/\d+\/\d+$/.test(location.pathname);
   const isSignupPage = location.pathname === "/signup";
   const isSigninPage = location.pathname === "/signin";
@@ -15,7 +14,8 @@ const NavbarComponent = () => {
     return localStorage.getItem("theme") === "dark";
   });
 
-  // Toggle theme function
+  const [isOpen, setIsOpen] = useState(false);
+
   const toggleTheme = () => {
     const newTheme = darkMode ? "light" : "dark";
     setDarkMode(!darkMode);
@@ -23,37 +23,40 @@ const NavbarComponent = () => {
     localStorage.setItem("theme", newTheme);
   };
 
-  // Apply theme on initial load
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "light";
     document.documentElement.setAttribute("data-theme", savedTheme);
     setDarkMode(savedTheme === "dark");
   }, []);
 
+  const toggleMenu = () => setIsOpen(!isOpen);
+
   return (
     <nav className="navbar">
-      {/* Left: Hotel Brand */}
       <Link to="/" className="navbar-brand">
         🍽️ QuickServe
       </Link>
 
-      {/* Right: Conditional Navigation Links */}
-      <ul className="navbar-links">
+      {/* Hamburger Icon */}
+      <button className="hamburger" onClick={toggleMenu}>
+        ☰
+      </button>
+
+      <ul className={`navbar-links ${isOpen ? "open" : ""}`}>
         {isHomePage ? (
           <>
-            <li><Link to="/signin" className="nav-link">Signin</Link></li>
-            <li><Link to="/signup" className="nav-link">Register</Link></li>
+            <li><Link to="/signin" className="nav-link" onClick={toggleMenu}>Signin</Link></li>
+            <li><Link to="/signup" className="nav-link" onClick={toggleMenu}>Register</Link></li>
           </>
-        ) : isMenuPage || isSignupPage || isSigninPage ? null : (  // ✅ Hides links if on /menu/:hotelId/:tableNo
+        ) : isMenuPage || isSignupPage || isSigninPage ? null : (
           <>
-            <li><Link to="/dashboard" className="nav-link">Dashboard</Link></li>
-            <li><Link to="/menu" className="nav-link">Menu Management</Link></li>
-            <li><Link to="/tables" className="nav-link">Table Management</Link></li>
-            <li><Link to="/payment" className="nav-link">Payment</Link></li>
+            <li><Link to="/dashboard" className="nav-link" onClick={toggleMenu}>Dashboard</Link></li>
+            <li><Link to="/menu" className="nav-link" onClick={toggleMenu}>Menu Management</Link></li>
+            <li><Link to="/tables" className="nav-link" onClick={toggleMenu}>Table Management</Link></li>
+            <li><Link to="/payment" className="nav-link" onClick={toggleMenu}>Payment</Link></li>
           </>
         )}
         <li>
-          {/* Theme Toggle Button */}
           <button onClick={toggleTheme} className="theme-toggle">
             {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
           </button>

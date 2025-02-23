@@ -16,4 +16,81 @@
     border: 1px solid #ccc; /* Optional: Border to separate section */
     border-radius: 8px;
   }
+
+  /* Responsive CSS for PlaceOrder Component */
+
+/* Ensure the container adapts to smaller screens */
+.container {
+  padding: 10px;
+}
+
+/* Make cards full-width on small screens */
+@media (max-width: 768px) {
+  .w-50 {
+    width: 100% !important;
+  }
+
+  .d-flex {
+    flex-direction: column;
+  }
+
+  .grid-template {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .ml-auto {
+    margin-left: 0 !important;
+    margin-top: 10px;
+  }
+
+  .selected-items-container {
+    width: 100% !important;
+  }
+
+  .mt-4, .mt-5 {
+    margin-top: 20px !important;
+  }
+
+  .d-grid {
+    display: grid;
+  }
+
+  /* Ensure buttons stack properly */
+  .btn {
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  /* Make modal buttons responsive */
+  .modal-footer .btn {
+    width: auto;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  /* Ensure ListGroup adapts to screen */
+  .list-group {
+    width: 100% !important;
+  }
+}
+
+/* Ensure modal is centered and responsive */
+@media (max-width: 576px) {
+  .modal-dialog {
+    margin: 10px;
+  }
+
+  .modal-content {
+    width: 100%;
+  }
+}
+
   
