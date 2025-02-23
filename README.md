@@ -1,48 +1,81 @@
 # 🍽️ QuickServe - QR-based ordering for restaurants 
 
-![QuickServe](https://your-image-link.com) _(Add an image of your app here)_
+QuickServe is a restaurant management system where customers can place orders by scanning a QR code. Hotel owners can manage their menu, tables, and payment options through an easy-to-use dashboard.
 
----
+## 🌐 Live Demo
 
-## 📌 About QuickServe  
-**QuickServe** is a **restaurant management system** that enables **customers to scan a QR code** at their table, view the **menu**, and **place orders seamlessly**.  
-Hotel owners can **manage menus, track orders, and process payments effortlessly**.  
+- **Frontend (Vercel):** [QuickServe Frontend](https://quick-serve-weld.vercel.app/)
+- **Backend (Render):** [QuickServe API](https://quickserve-7.onrender.com/)
 
-### ✨ Features  
-- 📲 **QR Code-based Ordering**  
-- 🍽️ **Menu Management**  
-- 🏷️ **Table Management**  
-- 🔄 **Order Tracking & Status Updates**  
-- 💳 **Payment Integration (QR Code-based)**  
-- 👥 **Role-based Access (Admin, Customer, Staff)**  
-- 🌗 **Dark/Light Theme Support**  
+## 📌 Features
 
----
+- User Authentication (Signup, Signin)
+- QR Code-based Order Placement
+- Menu & Table Management
+- Payment QR Code Upload
+- Light/Dark Theme Toggle
+- Responsive Design
 
-## Api endpoints
-Endpoint	                              Method	Description
-/api/v1/auth/signup	                      POST	Register a new user
-/api/v1/auth/login	                      POST	User login
-/api/v1/menu/:hotelId	                  GET	Get menu for a hotel
-/api/v1/place-order	                      POST	Place an order
-/api/v1/table-orders/:hotelId/:table_no	  GET	Get orders for a table
+## 🛠️ Tech Stack
 
-## 🛠️ Tech Stack  
-### **Frontend (React + TypeScript)**  
-- ⚛️ **React.js** (Component-based UI)  
-- 🔗 **React Router** (Navigation)  
-- 🎨 **Bootstrap** (Styling & Responsiveness)  
+### Frontend
+- React (TypeScript)
+- React Router
+- Bootstrap (for styling)
+- Vercel (Deployment)
 
-### **Backend (Express + PostgreSQL)**  
-- 🚀 **Node.js + Express.js** (RESTful API)  
-- 🗄️ **PostgreSQL** (Database)  
-- 🏗️ **TypeScript** (Strongly typed backend)  
+### Backend
+- Express (TypeScript)
+- PostgreSQL (Database)
+- Render (Deployment)
 
----
+## 📋 Routes
 
-## 🚀 Getting Started  
+### Public Routes
+- `/` - Home Page
+- `/signup` - Register a new account
+- `/signin` - Login to your account
+- `/menu/:hotelId/:table_no` - Place an order for a specific table
 
-### **1️⃣ Clone the Repository**  
+### Protected Routes (After Signin)
+- `/dashboard` - Admin Dashboard
+- `/menu` - Manage Menu Items
+- `/tables` - Manage Table Details
+- `/orders/:table_no` - View Orders for a Specific Table
+- `/payment` - Upload Payment QR Code
+
+## 🚀 Setup Instructions
+
+### Prerequisites
+Ensure you have the following installed:
+
+- Node.js (v20+)
+- PostgreSQL (running in Docker or local)
+
+### 1. Clone the Repository
+
 ```bash
-git clone https://github.com/your-username/quickserve.git  
-cd quickserve  
+git clone https://github.com/nitesh-0/QuickServe.git
+cd quickserve
+```
+
+### 2. Backend Setup
+
+```bash
+cd apps/backend
+npm install
+cp .env.example .env
+# Update environment variables
+npm run dev
+```
+
+### 3. Frontend Setup
+
+```bash
+cd apps/frontend
+npm install
+npm run dev
+```
+
+
+
